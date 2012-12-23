@@ -4,6 +4,6 @@ public interface MatrixInterface {
 
 	public List<Integer> getMovieIdList();
 
-	public String getTopMovieByGenre(List<Integer> movieIdList);
+	public String getTopMovieByGenre(List<Integer> movieIdList,Integer UserRatings);
 
 }

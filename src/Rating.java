@@ -10,13 +10,7 @@ public class Rating implements MatrixInterface {
 	private int rating;
 	private int timestamp;
 
-	public Rating(int userId, int movieId, int rating, int timestamp) {
-		super();
-		this.userId = userId;
-		this.movieId = movieId;
-		this.rating = rating;
-		this.timestamp = timestamp;
-	}
+	
 
 	public Rating() {
 		// TODO Auto-generated constructor stub
@@ -26,6 +20,16 @@ public class Rating implements MatrixInterface {
 	public String toString() {
 		return "Rating [userId=" + userId + ", movieId=" + movieId
 				+ ", rating=" + rating + ", timestamp=" + timestamp + "]";
+	}
+
+	
+	
+	public Rating(int userId, int movieId, int rating, int timestamp) {
+		super();
+		this.userId = userId;
+		this.movieId = movieId;
+		this.rating = rating;
+		this.timestamp = timestamp;
 	}
 
 	public int getUserId() {
@@ -67,11 +71,11 @@ public class Rating implements MatrixInterface {
 	}
 
 	@Override
-	public String getTopMovieByGenre(List<Integer> movieIdList) {
+	public String getTopMovieByGenre(List<Integer> movieIdList,Integer UserRatings) {
 		// TODO Auto-generated method stub
 		
 		Parsing parserRatingObj = new Parsing();
-		List<Rating> userRating = parserRatingObj.getRating();
+		List<Rating> userRating = parserRatingObj.getRating(UserRatings);
 		
 		Parsing parserMovieObj = new Parsing();
 		Map<Integer, Movie> movieData = parserMovieObj.getMovieData();

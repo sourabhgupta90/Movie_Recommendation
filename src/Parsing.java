@@ -1,5 +1,7 @@
 import java.io.DataInputStream;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -39,20 +41,53 @@ public class Parsing {
 
 	}
 
-	public List<Rating> getRating() {
+	public List<Rating> getRating(Integer UserRatings) {
 
-		  
-		  List<Rating> userRating = new ArrayList<Rating>();
-		  
-		  Rating r1 = new Rating(1, 1, 2, 42131);
-		  Rating r2 = new Rating(2, 2,3, 42131); 
-		  Rating r3 = new Rating(3, 3, 3, 42131);
-		  Rating r4 = new Rating(4, 2, 1, 42131);
-		  
-		  userRating.add(r1); userRating.add(r2); userRating.add(r3);
-		  userRating.add(r4); return userRating;
-		  
+		/*
+		 * List<Rating> userRating = new ArrayList<Rating>();
+		 * 
+		 * Rating r1 = new Rating(1, 1, 2, 42131); Rating r2 = new Rating(2,
+		 * 2,3, 42131); Rating r3 = new Rating(3, 3, 3, 42131); Rating r4 = new
+		 * Rating(4, 2, 1, 42131);
+		 * 
+		 * userRating.add(r1); userRating.add(r2); userRating.add(r3);
+		 * userRating.add(r4); return userRating;
+		 */
+		List<Rating> userRating = new ArrayList<Rating>();
+        Rating ratingObj = new Rating();
 		
+        try
+        {
+                
+                FileInputStream fstream = new FileInputStream("ratingsEdit.data");
+
+                DataInputStream in = new DataInputStream(fstream);
+                int count = 0;
+                
+                while (in.available() !=0)
+                {
+                	
+                	String str1 = in.readLine();
+                	
+    				String s[] = str1.split("\t");
+    				
+    				
+    				ratingObj.setUserId(Integer.valueOf(s[0]));
+    				ratingObj.setMovieId(Integer.valueOf(s[0]));
+    				ratingObj.setRating(Integer.valueOf(s[0]));
+    				ratingObj.setTimestamp(Integer.valueOf(s[0]));
+    			
+    				
+    				userRating.add(ratingObj);
+    				
+                }
+                in.close();
+        } 
+        catch (Exception e)
+        {
+        	System.err.println("input file does not exists");
+        }	
+		return userRating;
 	}
 
 }

@@ -12,6 +12,9 @@ public class MovieRecommend {
 		 * 4. first parsing than question.
 		 */
 
+		/* till the pasing
+		  
+		 
 		Parsing parserUserObj = new Parsing();
 		Map<Integer, User> userData = parserUserObj.getUserData();
 		// System.out.println(userData);
@@ -19,12 +22,16 @@ public class MovieRecommend {
 		Parsing parserMovieObj = new Parsing();
 		Map<Integer, Movie> movieData = parserMovieObj.getMovieData();
 		// System.out.println(movieData);
-
-		Parsing parserRatingObj = new Parsing();
-		List<Rating> userRating = parserRatingObj.getRating();
-		//System.out.println("userRating"+userRating);
-
+		*/
 		
+		Integer UserRatings = 20;
+		Parsing parserRatingObj = new Parsing();
+		
+		List<Rating> userRating = parserRatingObj.getRating(UserRatings);
+		
+		System.out.println("userRating "+userRating);
+
+		/*
 		///// top movie by genre
 		Movie movieObj = new Movie();
 
@@ -36,8 +43,7 @@ public class MovieRecommend {
 		System.out.println("top movie by genre"+topMovieByGenre);
 		///////////////
 	
-	
-	
+		*/
 	
 	}
 

@@ -90,7 +90,7 @@ public class Movie implements MatrixInterface {
 	}
 
 	@Override
-	public String getTopMovieByGenre(List<Integer> MovieIdList) {
+	public String getTopMovieByGenre(List<Integer> MovieIdList,Integer UserRatings) {
 		// TODO Auto-generated method stub
 		return null;
 	}
