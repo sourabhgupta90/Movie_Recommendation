@@ -5,7 +5,12 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * 
+ * @author sourabh
+ * Rating class contains the rating of movieId
+ * given by the user
+ */
 public class Rating implements MatrixInterface {
 
 	private int userId;
@@ -80,12 +85,17 @@ public class Rating implements MatrixInterface {
 		Map<Integer, Movie> movieData = parserMovieObj.getMovieData();
 		Iterator<Integer> itr1 = movieIdList.iterator();
 
-		//movieRatingList containing the rating of movie for a specified genre
+		/**
+		 *movieRatingList containing the rating of movie for a specified genre
+		 */
+		
 		List<Float> movieRatingList = new ArrayList<Float>();
 
 		int movieIdIndex = 0;
 		
-		//while for calculating the rating of movies list
+		/**
+		 *	while for calculating the rating of movies list
+		 */
 		
 		while (itr1.hasNext()) {
 
@@ -94,7 +104,7 @@ public class Rating implements MatrixInterface {
 			int ratingval = 0;
 			int count = 0;
 
-			System.out.println(movieIdList.get(movieIdIndex));
+			//System.out.println(movieIdList.get(movieIdIndex));
 
 			int userRatingIndex = 0;
 
@@ -121,7 +131,10 @@ public class Rating implements MatrixInterface {
 		float max = movieRatingList.get(0);
 		int maxRatingMovie = 0;
 		
-		// finding max rating movie
+		/**
+		 * finding max rating movie
+		 */
+		
 		
 		for (int t = 1; t < movieRatingList.size(); t++) {
 			if (max < movieRatingList.get(t)) {
@@ -132,7 +145,10 @@ public class Rating implements MatrixInterface {
 		maxRatingMovie = movieIdList.get(maxRatingMovie);
 		System.out.println("maxRatingMovie :" + maxRatingMovie);
         
-		//extracting the name of highest rating movie
+		/**
+		 *extracting the name of highest rating movie 
+		 */
+		
 		
 		for (Integer key : movieData.keySet()) {
 			if (key == maxRatingMovie) {

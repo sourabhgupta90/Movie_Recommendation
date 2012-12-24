@@ -3,10 +3,16 @@ import java.util.List;
 
 public interface MatrixInterface {
 
-	//getMovieIdList method gives the list of movies in a specified genre
+	/**
+	 * getMovieIdList method gives the list of movies in a specified genre
+	 */
+
 	public List<Integer> getMovieIdList();
 
-	//getTopMovieByGenre method print the top rating movie in a specified genre
+	/**
+	 * getTopMovieByGenre method print the top rating movie in a specified genre
+	 */
+	
 	public String getTopMovieByGenre(List<Integer> movieIdList);
 
 	public String mostWatchedMovie();

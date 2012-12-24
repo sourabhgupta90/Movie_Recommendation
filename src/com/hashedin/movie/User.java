@@ -1,6 +1,12 @@
 package com.hashedin.movie;
 import java.util.Arrays;
 
+/**
+ * 
+ * @author sourabh
+ *contain info related to the user 
+ */
+
 public class User {
 
 	private int userId;
