@@ -71,11 +71,11 @@ public class Rating implements MatrixInterface {
 	}
 
 	@Override
-	public String getTopMovieByGenre(List<Integer> movieIdList,Integer UserRatings) {
+	public String getTopMovieByGenre(List<Integer> movieIdList) {
 		// TODO Auto-generated method stub
 		
 		Parsing parserRatingObj = new Parsing();
-		List<Rating> userRating = parserRatingObj.getRating(UserRatings);
+		List<Rating> userRating = parserRatingObj.getRating();
 		
 		Parsing parserMovieObj = new Parsing();
 		Map<Integer, Movie> movieData = parserMovieObj.getMovieData();

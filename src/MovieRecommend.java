@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+
 import java.util.Map;
 
 public class MovieRecommend {
@@ -11,27 +9,29 @@ public class MovieRecommend {
 		 * 1. Parsing the data 2. Short the file 3. Method of top movie by genre
 		 * 4. first parsing than question.
 		 */
-
-		/* till the pasing
-		  
-		 
+		
+		/*
+		
 		Parsing parserUserObj = new Parsing();
 		Map<Integer, User> userData = parserUserObj.getUserData();
 		// System.out.println(userData);
-
-		Parsing parserMovieObj = new Parsing();
-		Map<Integer, Movie> movieData = parserMovieObj.getMovieData();
-		// System.out.println(movieData);
+		
 		*/
 		
-		Integer UserRatings = 20;
+		Parsing parserMovieObj = new Parsing();
+		
+		Map<Integer, Movie> movieData = parserMovieObj.getMovieData();
+		
+		System.out.println(movieData);
+		
+		
+		/*
 		Parsing parserRatingObj = new Parsing();
 		
-		List<Rating> userRating = parserRatingObj.getRating(UserRatings);
+		List<Rating> userRating = parserRatingObj.getRating();
 		
 		System.out.println("userRating "+userRating);
 
-		/*
 		///// top movie by genre
 		Movie movieObj = new Movie();
 
@@ -42,9 +42,8 @@ public class MovieRecommend {
 		String topMovieByGenre = ratingObj.getTopMovieByGenre(movieIdList);
 		System.out.println("top movie by genre"+topMovieByGenre);
 		///////////////
-	
+		
 		*/
-	
 	}
 
 }

@@ -12,8 +12,9 @@ public class Parsing {
 
 	public Map<Integer, Movie> getMovieData() {
 
+		/*
 		Map<Integer, Movie> movieData = new HashMap<Integer, Movie>();
-
+		
 		int intArray1[] = { 1, 0, 1, 0 };
 		int intArray2[] = { 1, 1, 1, 0 };
 		int intArray3[] = { 1, 0, 1, 0 };
@@ -27,7 +28,53 @@ public class Parsing {
 		movieData.put(movie3.getMovieId(), movie3);
 
 		return movieData;
+		
+		*/
+		
+		////////////////////////////////////////////////////////////////////////////////////////
+		Map<Integer, Movie> movieData = new HashMap<Integer, Movie>();	
+		
+		Movie movie1 = new Movie();
+		try
+        {
+                
+				
+						
+				FileInputStream fstream = new FileInputStream("movieEdit.data");
 
+                DataInputStream in = new DataInputStream(fstream);
+                
+                
+                while (in.available() !=0)
+                {
+                	
+                	String str1 = in.readLine();
+                	String s[] = str1.split("[|]+");
+    				
+                	
+                	movie1.setMovieId(Integer.valueOf(s[0]));
+                	movie1.setMovieName(s[1]);
+                	movie1.setDate(s[2]);
+                	
+                	int genreArray[]  =  new int [19] ;
+                	
+                	for(int t  = 0 ; t < genreArray.length; t++){
+    					genreArray[t] = Integer.valueOf(s[4+t]);
+                	}
+                	
+                	movie1.setGenre(genreArray);
+                	System.out.println(movie1);
+                	movieData.put(movie1.getMovieId(), movie1);
+                
+                }
+                in.close();
+        } 
+        catch (Exception e)
+        {
+        	System.err.println("input file does not exists");
+        }	
+		return movieData;
+		//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	}
 
 	public Map<Integer, User> getUserData() {
@@ -41,7 +88,7 @@ public class Parsing {
 
 	}
 
-	public List<Rating> getRating(Integer UserRatings) {
+	public List<Rating> getRating() {
 
 		/*
 		 * List<Rating> userRating = new ArrayList<Rating>();
@@ -62,7 +109,7 @@ public class Parsing {
                 FileInputStream fstream = new FileInputStream("ratingsEdit.data");
 
                 DataInputStream in = new DataInputStream(fstream);
-                int count = 0;
+                
                 
                 while (in.available() !=0)
                 {
@@ -77,7 +124,6 @@ public class Parsing {
     				ratingObj.setRating(Integer.valueOf(s[0]));
     				ratingObj.setTimestamp(Integer.valueOf(s[0]));
     			
-    				
     				userRating.add(ratingObj);
     				
                 }
