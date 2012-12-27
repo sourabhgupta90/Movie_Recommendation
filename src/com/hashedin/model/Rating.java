@@ -1,5 +1,11 @@
 package com.hashedin.model;
 
+/**
+ * 
+ * @author sourabh contains the rating given by user
+ *
+ */
+
 public class Rating {
 
 	private Movie movieObj;
@@ -60,6 +66,8 @@ public class Rating {
 		this.timestamp = timestamp;
 	}
 
+	
+	
 	
 
 }

@@ -12,9 +12,18 @@ import com.hashedin.model.User;
 import com.hashedin.movieRecommendation.MovieDatabase;
 import com.hashedin.movieRecommendation.MovieManager;
 
+/**
+ * 
+ * @author sourabh hardcoded data for movie data base
+ *
+ */
 public class HardCodedData implements MovieManager {
 
+	
 	@Override
+	/**
+	 * 	return the movie database of hard coded file
+	 */
 	public MovieDatabase getMovieDatabase() {
 		// TODO Auto-generated method stub
 

@@ -1,7 +1,11 @@
 package com.hashedin.model;
 
 import java.util.ArrayList;
-
+/**
+ * 
+ * @author sourabh contains info of movie
+ *
+ */
 
 public class Movie  {
 

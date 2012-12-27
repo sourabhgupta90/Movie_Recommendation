@@ -42,7 +42,7 @@ public class FileHandlingParser implements MovieManager {
 		 Map<Integer, User> userData = userParserObj.getUserData() ;
 
 		 RatingParser ratingParserObj = new RatingParser(ratingsFileName);
-		 List<Rating>RatingObj =  ratingParserObj.getRating();
+		 List<Rating>RatingObj =  ratingParserObj.getRating(movieData,userData);
 		 
 				 
 	/*	

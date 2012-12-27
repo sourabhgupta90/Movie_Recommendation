@@ -1,5 +1,11 @@
 package com.hashedin.movieRecommendation;
 
+/**
+ * @author sourabh 
+ * @see movie database constains map for user and movie and list for rating
+ * 
+ * 
+ */
 import java.util.List;
 import java.util.Map;
 
